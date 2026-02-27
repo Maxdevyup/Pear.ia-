@@ -2,7 +2,8 @@
 Bittorent of AI 🍐
 What is Peer.AI ?
 Peer.AI is an open-source distributed AI platform. The idea is simple : instead of relying on expensive centralized servers, every user contributes a small part of their PC's idle computing power to the network and earns credits in return. Use those credits to run AI queries. Think uTorrent, but for artificial intelligence.
-No crypto. No blockchain. No subscription. Just people helping people run AI.
+No crypto. No blockchain.  Just people helping people run AI.
+Get Paid for that!
 
 Why ?
 Running AI today means depending on OpenAI, Google, or paying for cloud GPUs. Peer.AI wants to change that — making AI accessible to everyone by using the power that already exists in millions of personal computers sitting idle around the world. ( no more gpu shortage Nvidia)
