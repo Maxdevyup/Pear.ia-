@@ -18,7 +18,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float32)
 
 
-@app.route('/get_response', methods=['POST'])
+@app.route('/API', methods=['POST'])
 def response_send():
     #question input
     asked_question = request.json["message"]
@@ -35,14 +35,17 @@ def response_send():
     #Generate the response
     with torch.no_grad():
         outputs = model.generate(
-        **TokenizeInput,
-        max_new_tokens=200,
-        temperature=0.7,
-        do_sample=True
-    )
+            **TokenizeInput,
+            max_new_tokens=200,
+            temperature=0.7,
+            do_sample=True
+        )
     response = tokenizer.decode(outputs[0], skip_special_tokens=True)
     print(response)
-    return jsonify({"reponse": response}), print("hello world")
+    print("Request Complete")
+    response = response.split("</think>")[-1].strip()
+    return jsonify({"reponse": response})
+
 
     #Launch Server
 if __name__ == "__main__":
