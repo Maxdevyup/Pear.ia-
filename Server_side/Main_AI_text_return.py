@@ -7,12 +7,22 @@ from threading import Thread
 app = Flask(__name__)
 CORS(app)
 
-AI_Role = "You are a helpful assistant."
+#Model
+ModelUsed = "Qwen/Qwen3-0.6B" #Place holder for testing get a small Ai fast like this one ( 0.6b to 4b for fast response)
+AvalaibleModel = [
+    {"name": "Qwen3-0.6B", "Provider": "AlibabaCloud", "Parameter": "0.6B", "ram": "2GB"},
+    {"name": "Qwen3-4B",  "Provider": "AlibabaCloud", "Parameter": "4B",   "ram": "8GB"},
+
+]
+
+#Role
+AI_Role = "You are a helpful assistant." #Place Holder
+#Context
 conversation = [
     {"role": "system", "content": AI_Role}
 ]
 
-model_id = "Qwen/Qwen3-0.6B"
+model_id = ModelUsed
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16)
 

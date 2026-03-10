@@ -1,3 +1,5 @@
+//send input to the python server and return the LLM response
+
 async function SendChatBot() {
     var inputQuestion = document.getElementById("inputQuestion").value;
     let Final_text = ""
@@ -35,3 +37,4 @@ async function SendChatBot() {
         }
     }
 }
+

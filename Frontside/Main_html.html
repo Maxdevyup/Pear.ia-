@@ -7,9 +7,18 @@
     <link rel="stylesheet" href="Main_style.css">
 </head>
 <body>
-    <input type="text" id="inputQuestion" placeholder="Send a question to..."></input>
-    <button id="sendButton" onclick="SendChatBot()">Send</button>
-    <div id="ChatContainer"></div>
-    <script src="Main_js.js"></script>
+    <div id="ChatContainer" class="ChatStyle"></div>
+
+    <input type="text" id="inputQuestion" class="InputStyle" placeholder="Send a question to..."></input>
+
+    <button id="sendButton" class="SendButtonStyle" onclick="SendChatBot()">Send</button>
+
+    <div id="ChatPanel">
+        <button id="Option">
+            option chat
+        </button>
+    </div>
+    <button onclick="OpenChatPanel">ChatPanelButton</button>
+    <script src="LLM_System.js"></script>
 </body>
 </html>
