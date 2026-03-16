@@ -5,14 +5,14 @@ async function SendChatBot() {
     let Final_text = ""
     let BufferThink = ""
     let Thinking = true
-
+    document.getElementById("inputQuestion").value = "";
     var response = await fetch("http://localhost:5000/API/Streamer", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ message: inputQuestion })
     });
 
-    document.getElementById("inputQuestion").value = "";
+    
 
     const reader = response.body.getReader()
     const decoder = new TextDecoder()

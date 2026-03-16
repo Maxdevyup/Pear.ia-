@@ -1,1 +1,4 @@
-function OpenChatPanel(){}
+function OpenChatPanel(){
+
+    
+}
