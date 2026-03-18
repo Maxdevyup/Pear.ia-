@@ -6,6 +6,10 @@ from threading import Thread
 
 app = Flask(__name__)
 CORS(app)
+#Gpu type
+Processorwork = True
+Cuda = False
+Rocm = False
 
 #Model
 ModelUsed = "Qwen/Qwen3-0.6B" #Place holder for testing, get a small Ai fast like this one ( 0.6b to 4b for fast response)
@@ -22,10 +26,14 @@ conversation = [
     {"role": "system", "content": AI_Role}
 ]
 
+
+#Tokenizer type
 model_id = ModelUsed
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.bfloat16)
 
+
+#Generating message func
 @app.route("/API/Streamer", methods=["POST"])
 def Stream_Response():
     global conversation
@@ -58,6 +66,8 @@ def Stream_Response():
 
     return Response(generer(), mimetype="text/event-stream")
 
+
+#PY Server 
 if __name__ == "__main__":
     app.run(port=5000, debug=False)
     

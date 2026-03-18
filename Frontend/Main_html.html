@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodink</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Main_style.css">
+</head>
+<body>
+<div class="app">
+
+    <!-- Sidebar -->
+    <div id="ChatPanel">
+        <div class="sidebar-header">
+            <div class="logo-dot">N</div>
+            <span class="logo-name">Nodink</span>
+        </div>
+
+        <button id="Option">+ New chat</button>
+
+        <div class="chat-history-label">Recent</div>
+        <div class="history-item active">Nothing to see</div>
+        <div class="history-item">Nothing to see</div>
+
+
+        <div class="sidebar-footer">
+            <span class="toggle-label-text">Thinking mode</span>
+            <input type="checkbox" id="checkboxInput">
+            <label for="checkboxInput" class="toggleSwitch"></label>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <!-- Top bar -->
+        <div class="topbar">
+            <button id="ChatPanelButton" onclick="OpenChatPanel()">☰ Sidebar</button>
+            <span class="model-tag">Model choosed</span>
+        </div>
+
+        <!-- Messages -->
+        <div id="ChatContainer">
+
+            <!-- Empty / welcome state -->
+            <div class="empty-state">
+                <div class="big-logo">Nodink</div>
+                <div class="sub">Local AI studio — ask anything</div>
+                <div class="suggestion-chips">
+                    <div class="chip">Indev</div>
+                </div>
+            </div>
+            
+            <div id="ConvBubbleUser"></div>
+            <div id="ConvBubbleAI"></div>
+        </div>
+
+        <!-- Input -->
+        <div class="input-area">
+            <div class="input-box">
+                <input
+                    type="text"
+                    id="inputQuestion"
+                    placeholder="Send a message..."
+                    autocomplete="off"
+                >
+                <button id="sendButton" onclick="SendChatBot()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+            <div class="input-hint">Nodink runs locally — no data leaves your machine</div>
+        </div>
+
+    </div>
+</div>
+
+<script src="LLM_System.js"></script>
+</body>
+</html>

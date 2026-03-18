@@ -5,6 +5,7 @@ async function SendChatBot() {
     let Final_text = ""
     let BufferThink = ""
     let Thinking = true
+    document.getElementById("ConvBubbleUser").innerHTML = inputQuestion
     document.getElementById("inputQuestion").value = "";
     var response = await fetch("http://localhost:5000/API/Streamer", {
         method: "POST",
@@ -33,7 +34,7 @@ async function SendChatBot() {
 
         if (Thinking === false) {
             Final_text += chunk
-            document.getElementById("ChatContainer").innerHTML = Final_text.replace("<|im_end|>", "")
+            document.getElementById("ConvBubbleAI").innerHTML = Final_text.replace("<|im_end|>", "")
         }
     }
 }
