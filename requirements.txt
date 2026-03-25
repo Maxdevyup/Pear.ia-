@@ -1,4 +1,6 @@
 flask
 flask-cors
-transformers
+llama-cpp-python #--prefer-binary for installation 
 torch
+huggingface_hub
+transformers

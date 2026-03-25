@@ -222,6 +222,7 @@ html, body {
     scrollbar-color: var(--border) transparent;
 }
 
+
 #ChatContainer::-webkit-scrollbar       { width: 6px; }
 #ChatContainer::-webkit-scrollbar-track { background: transparent; }
 #ChatContainer::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
